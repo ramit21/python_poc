@@ -91,7 +91,8 @@ for i in f:
 f.read(): reads all the file in a single line  
 f.readLine() reads all the file into memory and returns its contents as a list of lines.  
 ———————————————————————————————  
-## NumPy pandas:   
+## NumPy pandas: 
+**NumPy**:    
 Useful when operating on large data sets. Saves code and memory compared to oprating on normal Lists. T
 his feature has been taken from Matlab. R came with these features, then Python came with this Numpy package. 
 Full form - “Numercal Python”. Good for Data analaytics.
@@ -118,7 +119,7 @@ SciPy (Scientific Python) is often mentioned in the same breath with NumPy.
 SciPy extends the capabilities of NumPy with further useful functions for minimization, regression, 
 Fourier-transformation and many others.  
 ———————————————————————————————  
-Pandas: Used for processing of structured data, and process it in tabular format.  
+**Pandas**: Used for processing of structured data, and process it in tabular format.  
 import panda as pd  
 data = pd.DataFrame((‘Country’: [‘Russia’,’Columbia’,’India’],  
 					‘Rank’: [121,4,10]))  
