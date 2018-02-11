@@ -12,7 +12,7 @@ Setup Python on local:
 	:> python PythonConcepts.py 10
 	
 ———————————————————————————————  
-Learnings:
+**Learnings:**
 
 On cmd prompt, type python, it opens python prompt, then type following  
 var = 10  
@@ -40,7 +40,7 @@ _ is a special command in python (just like $ in unix), gives result of last cal
 ———————————————————————————————  
 ## Python data structures:
 
-List: (indexed linked lists). eg. colors = [’abc’, ‘def’ , ‘ghi’]  
+**List**: (indexed linked lists). eg. colors = [’abc’, ‘def’ , ‘ghi’]  
 split(‘’) function returns a list  
 if ‘def’ in colors:  #list.contains of python  
 list methods: list.sort, list.append, insert 
@@ -50,14 +50,14 @@ a,b,c = [1,2,3]. #Variables on left should match te size of the list
 list.insert(index, elemnt)  
 list.remove(element)  
 
-Tuple:  
+**Tuple**:  
 x=(1,2,3) Or x=tuple([1,2,3])  
 x[0] is 1, x[-1] is 3;; x[0]=10 gives error, append is also not allowed on tuples  
 Tuples support indexing and slicing just as in Lists  
 List in pyton is mutable, but tuple is not  
 Python supports list within list, or tuple within tuple  
 
-Set: removes duplicates  
+**Set**: removes duplicates  
 s=set() #Empty set  
 s=set([1,2,3,1,2])  
 Set does not support inexing, so s[0] will give an error  
@@ -65,7 +65,7 @@ Set is also immutable (just like tuple) so you can’t append, you can still rem
 When creating a set of objects of custom class, you can override __eq__ method in the class  
 I can type cast set/tuple into a new list  
 
-Dictionary: Key Value pairs. Key can be anything except list/tuple/set  
+**Dictionary**: Key Value pairs. Key can be anything except list/tuple/set  
 dict = {‘key1’:’Val1’, ‘key2’: ‘val2’}  
 if ‘key1’ in dict:    #Avoid KeyError  
 for key in dict : #by default iterates over keys of dictionary  
@@ -74,6 +74,7 @@ dict.values() -> returns tuple of values of dictionary
 dict.items() -> returns entire dictiionary with key value pairs  
 if key <> dict[key]:   #To check if key is present in the dictionary  
 	dict[ky] = some Value  
+	
 Unpacking: for k,v in dict.items():  
                 print( key = k, value = v)  
 ———————————————————————————————  
@@ -126,39 +127,40 @@ data.drop_duplicates() -> removes duplicate (entire row being duplicate)
 data.drop_duplicates(subset=‘Country’) -> removes duplicates (as per the given column  
 pd.read_csv(‘csv file ’) -> reads csv data into tabular format  
 
-import panda as pd
-from pandas series,dataFrame. -> for series and dataFrame functions
-s=pd.series([1,2,3]) -> creates with default indexes 0,1,2
-s=pd.series([1,2,3], indexes=[‘A’,B’,’C’]) -> creates data against given indices
+import panda as pd  
+from pandas series,dataFrame. -> for series and dataFrame functions  
+s=pd.series([1,2,3]) -> creates with default indexes 0,1,2  
+s=pd.series([1,2,3], indexes=[‘A’,B’,’C’]) -> creates data against given indices  
 
-DataFrame is used to process data in tabular (2-D) struture. Good for processing Json files with keys as rows and values as data columns
-df=p.dataframe(list, indexes=, columns = )
-df.describe() -> shows entire dataFrame
-df[df[‘A’] > df[‘B’]] -> just like Sql select where clause
-groupBy is also supported
-df.to_csv(‘fileName’)-> converts dataFrame to csv file
-df.to_json(..)-> converts dataFrame to json
-import json
-json.load(path to json file)
-———————————————————————————————
-## Database connection: 
-(using cx_Oracle)
+**DataFrame** is used to process data in tabular (2-D) struture. 
+Good for processing Json files with keys as rows and values as data columns  
+df=p.dataframe(list, indexes=, columns = )  
+df.describe() -> shows entire dataFrame  
+df[df[‘A’] > df[‘B’]] -> just like Sql select where clause  
+groupBy is also supported  
+df.to_csv(‘fileName’)-> converts dataFrame to csv file  
+df.to_json(..)-> converts dataFrame to json  
+import json  
+json.load(path to json file)  
+———————————————————————————————  
+## Database connection:   
+(using cx_Oracle)  
 
-import cx_Oracle
-connection = cx_Oracle.connect('user/pass@someserver:port')
-cursor = connection.cursor()
-cursor.execute('select sysdate from dual')
+import cx_Oracle  
+connection = cx_Oracle.connect('user/pass@someserver:port')    
+cursor = connection.cursor()  
+cursor.execute('select sysdate from dual')  
+  
+for row in cursor:  
+    print row  
+connection.close()  
+———————————————————————————————  
+## Machine Learning :  
 
-for row in cursor:
-    print row
-connection.close()
-———————————————————————————————
-## Machine Learning :
-
-using sklearn package
-sklearn.model_Selection import train_test_split
-sklearn.ensemble import RandomForestClassifier
-sklearn.cross_validation import cross_val_score
-sklearn.metrics import accuracy_score
+using sklearn package  
+sklearn.model_Selection import train_test_split  
+sklearn.ensemble import RandomForestClassifier  
+sklearn.cross_validation import cross_val_score  
+sklearn.metrics import accuracy_score  
 
 
