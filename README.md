@@ -19,7 +19,7 @@ var = 10
 var —> prints 10  
 type(var) —> prints int  
 
-Coomonly used data types - string, range, int, float, long, boolean, enum etc.  
+Commonly used data types - string, range, int, float, long, boolean, enum etc.  
 ———————————————————————————————  
 ## Typecasting in py:
 
