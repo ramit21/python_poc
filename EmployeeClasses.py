@@ -1,3 +1,13 @@
+from abc import abstractmethod
+#abc is a python module - Abstract Base Class
+
+class Person:
+    
+    @abstractmethod #Decorator from abc module
+    def abstractFunc():
+        pass
+#now can not do p=Person()
+
 class Employee: #by default inherits object class
     __id = None       #private variables with default values
     __name = ""
@@ -61,12 +71,9 @@ class Employee: #by default inherits object class
         # True at the same time
         return not(self == other)  
 
-
-
-          
             
-#Inheritance        
-class Manager(Employee):
+#Multiple Inheritance -> super is called in the order of left to right      
+class Manager(Employee, Person):
     __grade = ""
     
     def __init__(self, id, name, type, salary, grade):
@@ -78,6 +85,9 @@ class Manager(Employee):
         
     def get_grade(self):
         return self.__grade
+    
+    def abstractFunc():
+        return "I am a person too"
     
     #Method overriding
     def toString(self):
