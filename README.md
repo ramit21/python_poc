@@ -190,6 +190,7 @@ monkey_f()
 
 
 Q. Mention the differences between Django, Pyramid and Flask.
+
 A. Flask is a “microframework” primarily build for a small application with simpler requirements. In flask, you have to use external libraries. Flask is ready to use.
 Pyramid is built for larger applications. It provides flexibility and lets the developer use the right tools for their project. The developer can choose the database, URL structure, templating style and more. Pyramid is heavy configurable.
 Django can also used for larger applications just like Pyramid. It includes an ORM.
@@ -197,6 +198,7 @@ Django can also used for larger applications just like Pyramid. It includes an O
 
 Q. You are required to scrap data from IMDb top 250 movies page. It should only have fields movie name, year, and rating.
 Ans.
+ ```
 from bs4 import BeautifulSoup
  
 import requests
@@ -208,18 +210,17 @@ soup = BeautifulSoup(response.text)
 tr = soup.findChildren("tr")
 tr = iter(tr)
 next(tr)
- 
+
 for movie in tr:
 title = movie.find('td', {'class': 'titleColumn'} ).find('a').contents[0]
 year = movie.find('td', {'class': 'titleColumn'} ).find('span', {'class': 'secondaryInfo'}).contents[0]
 rating = movie.find('td', {'class': 'ratingColumn imdbRating'} ).find('strong').contents[0]
 row = title + ' - ' + year + ' ' + ' ' + rating
- 
 print(row)
-
+```
 
 Q. How to create custom exception classes?
+
 A. It should inherit BaseException class.
 
 
-Q. 
