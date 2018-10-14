@@ -169,8 +169,8 @@ sklearn.metrics import accuracy_score
 
 Q. What is monkey patching in Python?
 Ans. Dynamic modifications of a class or module at run-time. Consider the below example:
-
- m.py
+```
+ #m.py
 class MyClass:
     def f(self):
         print "f()"
@@ -187,7 +187,7 @@ obj.f()
 The output will be as below:
 
 monkey_f()
-
+```
 
 Q. Mention the differences between Django, Pyramid and Flask.
 
