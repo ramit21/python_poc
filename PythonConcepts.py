@@ -109,9 +109,9 @@ words = ['atad','xf','xinjaou','eerie','yay']
 print(sortXfirst(words))      
 
 #Check if ab exists in value lists in a dictionary
-dict = {1:['ab','bc'], 2:['ef', 'gh']}
+dic = {1:['ab','bc'], 2:['ef', 'gh']}
 abExists = False
-for valList in dict.values():
+for valList in dic.values():
     if 'ab' in valList:
         abExists = True
         break
@@ -127,7 +127,9 @@ try:
 except IOError as e:  #Give a wrong file name above and see this exception
     print('IO error - '+str(e))
 except Exception as e:
-    print('Some error -'+str(e) )         
+    print('Some error -'+str(e))
+else:
+    print('No exception occured.')         
 
 f=open('FileToWrite.txt', 'w') #w mode creates file or over writes existing contents
 f.write("Hello\n")
@@ -195,3 +197,19 @@ employee_set.add(emp1)
 employee_set.add(emp2)
 employee_set.add(emp3)
 print(len(employee_set)) #Duplicate object not present
+
+
+A0 = dict(zip(('a','b','c','d','e'),(1,2,3,4,5)))
+A1 = range(10)
+A2 = sorted([i for i in A1 if i in A0])
+A3 = sorted([A0[s] for s in A0])
+A4 = [i for i in A1 if i in A3]
+A5 = {i:i*i for i in A1}
+A6 = [[i,i*i] for i in A1]
+print(A0)
+print(A1)
+print(A2)
+print(A3)
+print(A4)
+print(A5)
+print(A6)
