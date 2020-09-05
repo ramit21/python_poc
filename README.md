@@ -224,3 +224,27 @@ Q. How to create custom exception classes?
 A. It should inherit BaseException class.
 
 
+Q. What are generator functions?
+
+A. Functions that use 'yield' keyword instead of 'return' to return a value. On every yeild call, the state of the generator
+function is saved. Generator function can have multiple 
+yield statements to return different values on every function call. Generator functions return 'Generator objects',
+on which we can either call next() method, or use them in a 'for in' loop to access different yield values.
+
+```
+# A generator function 
+def simpleGeneratorFun(): 
+    yield 1
+    yield 2
+    yield 3
+   
+# x is a generator object 
+x = simpleGeneratorFun() 
+  
+# Iterating over the generator object using next 
+print(x.next()) # In Python 3, __next__() 
+print(x.next()) 
+print(x.next()) 
+``` 
+
+

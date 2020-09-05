@@ -213,3 +213,19 @@ print(A3)
 print(A4)
 print(A5)
 print(A6)
+
+
+# A generator function 
+def simpleGeneratorFun(): 
+    yield 1
+    yield 2
+    yield 3
+   
+# x is a generator object 
+x = simpleGeneratorFun() 
+  
+# Iterating over the generator object using next 
+print(x.__next__()) # In Python 3: __next__() , Python 2: next()
+print(x.__next__()) 
+print(x.__next__()) 
+#Calling more next than yields, will cause exception
