@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 import sys
 import pandas as p
+import json
 from EmployeeClasses import Employee, Manager
 
 
@@ -11,18 +12,16 @@ print("Executing script : {}".format(script_name))
 
 if argLen == 0:
     print('Missing command line argument')
-    sys.exit(1)
+    #sys.exit(1)
+else:
+    #different ways of formatting a string
+    print('Checking even odd for input val= %s and argCount = %d' %(arguments[0], argLen))
+    num = int(arguments[0])  #Default data type for sys.argv is str
+    if num%2 == 0:
+        	print('even')
+    elif num%2 != 0:
+        	print('odd')
 
-#different ways of formatting a string
-print('Checking even odd for input val= %s and argCount = %d' %(sys.argv[1], argLen))
-
-num = int(sys.argv[1])  #Default data type for sys.argv is str
-
-if num%2 == 0:
-	print('even')
-elif num%2 != 0:
-	print('odd')
-	
 print(type(range(0,10)))
 
 i=2
@@ -148,6 +147,18 @@ line=f.read()
 print(line)
 f.close()
 
+# you can pass functions as parameters to other functions
+def PrintIt(x):
+    print("Value = "+str(x)+"\n")
+    
+def CallAnotherFunc(f,x):
+    return f(x)
+
+CallAnotherFunc(PrintIt, 3)
+
+#Lambdas let you inline simple functions (equivalent to a func taking an arg and returning a value)
+print(CallAnotherFunc(lambda x: x*x, 3))
+
 #sort dictionary based on Values using Lambda 
 map = {1:'a', 2:'d', 3: 'c', 4: 'b'}
 print(sorted(map.items(), key=lambda x:x[1]))
@@ -229,3 +240,13 @@ print(x.__next__()) # In Python 3: __next__() , Python 2: next()
 print(x.__next__()) 
 print(x.__next__()) 
 #Calling more next than yields, will cause exception
+
+# Convert json (name-city pairs) string to dict of name-city pairs
+# note we imported json module at the top
+jsonStr = '[{"name": "ramit","city": "delhi"}, {"name": "warner","city": "sydney"}]'
+jsonData = json.loads(jsonStr)
+name_dict = {}
+for obj in jsonData:
+     name_dict[obj['name']] = obj['city']
+print(name_dict)
+        
