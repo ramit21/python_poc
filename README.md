@@ -1,7 +1,6 @@
 # python_poc
 ## Python POC
 
-
 Python is dynamic, interpreted language. There are no type declation of variables, paramters or functions. This makes code short and flexible, but you lose the compiler time type checking of the source code. Python tracks type of variables at runtime. Being interpreted, its read first and execute later, so all function etc should be defined before use.
 
 Setup Python on local:
@@ -247,4 +246,7 @@ print(x.next())
 print(x.next()) 
 ``` 
 
+Q. What is *args, and **kwargs?
+
+A. https://www.geeksforgeeks.org/args-kwargs-python/
 
