@@ -249,4 +249,22 @@ name_dict = {}
 for obj in jsonData:
      name_dict[obj['name']] = obj['city']
 print(name_dict)
+
+#Multithreading example
+import threading
+
+def worker(name):
+    print(f"Thread {name} starting")
+    # Simulate I/O task
+    import time; time.sleep(2)
+    print(f"Thread {name} finished")
+
+threads = []
+for i in range(3):
+    t = threading.Thread(target=worker, args=(f"Worker-{i}",))
+    threads.append(t)
+    t.start()
+
+for t in threads:
+    t.join()
         

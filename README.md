@@ -90,6 +90,17 @@ for i in f:
 f.read(): reads all the file in a single line  
 f.readLine() reads all the file into memory and returns its contents as a list of lines.  
 ———————————————————————————————  
+## Multi Threading
+Multithreading in Python allows you to run multiple threads (smaller units of a process) concurrently, which is especially useful for I/O-bound tasks like network calls or file operations. However, due to the Global Interpreter Lock (GIL), that ensures only one thread executes Python bytecode at a time, Python threads don’t execute in true parallelism for CPU-bound tasks—but they can still improve responsiveness and throughput in many scenarios.
+
+Key Tools and Techniques:
+1. threading.Thread: The basic class to create and manage threads.
+2. join(): wait for threads to complete
+3. Lock, Semaphore, Event: Synchronization primitives to avoid race conditions.
+4. ThreadPoolExecutor: High-level API from concurrent.futures for managing thread pools.
+
+———————————————————————————————  
+
 ## NumPy pandas: 
 **NumPy**:    
 Useful when operating on large data sets. Saves code and memory compared to oprating on normal Lists. T
