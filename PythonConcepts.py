@@ -258,21 +258,27 @@ print(name_dict)
 #Multithreading example
 import threading
 
-def worker(name):
+#Python threads dont return values, capture them in a shared context instead.
+results = [None]*3  # sizethe array to avoid index out of bounds 
+def worker(name, result_container, index):
     print(f"Thread {name} starting")
+    result_container[index] = f'Hello from thread {name}'
     # Simulate I/O task
     import time; time.sleep(2)
     print(f"Thread {name} finished")
 
 threads = []
 for i in range(3):
-    t = threading.Thread(target=worker, args=(f"Worker-{i}",))
+    t = threading.Thread(target=worker, args=(f"Worker-{i}",results, i,))
     threads.append(t)
     t.start()
 
 for t in threads:
     t.join()
-        
+
+for result in results:
+    print(result);
+
 # Make HTTP call
 import requests
 
