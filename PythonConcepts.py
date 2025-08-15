@@ -268,3 +268,11 @@ for i in range(3):
 for t in threads:
     t.join()
         
+# Make HTTP call
+import requests
+
+response = requests.get('https://jsonplaceholder.typicode.com/comments?postId=1')
+if response.status_code == 200:
+    responseBody = response.json()  # Converts response body to a Python dict
+    print(responseBody) 
+    print(responseBody[0].email) #print a specific field in the list of responses
