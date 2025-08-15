@@ -209,8 +209,13 @@ employee_set.add(emp2)
 employee_set.add(emp3)
 print(len(employee_set)) #Duplicate object not present
 
+names = ('a','b','c','d','e')
+scores = (1,2,3,4,5)
+for name, score in zip(names, scores):
+    print(f"{name} scored {score}")
 
-A0 = dict(zip(('a','b','c','d','e'),(1,2,3,4,5)))
+A0 = dict(zip(('a','b','c','d','e'),(1,2,3,4,5))) # o/p is {'a': 1, 'b': 2, 'c': 3, 'd': 4, 'e': 5};
+# you can also do list(zip(..) would give o/p like [(a,1), (b,2)...etc]
 A1 = range(10)
 A2 = sorted([i for i in A1 if i in A0])
 A3 = sorted([A0[s] for s in A0])
@@ -275,4 +280,4 @@ response = requests.get('https://jsonplaceholder.typicode.com/comments?postId=1'
 if response.status_code == 200:
     responseBody = response.json()  # Converts response body to a Python dict
     print(responseBody) 
-    print(responseBody[0].email) #print a specific field in the list of responses
+    print(responseBody[0]['email']) #print a specific field in the list of responses
