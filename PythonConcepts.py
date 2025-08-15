@@ -8,14 +8,14 @@ from EmployeeClasses import Employee, Manager
 script_name = sys.argv[0]
 arguments = sys.argv[1:]
 argLen = len(arguments)
-print("Executing script : {}".format(script_name))
+print(f"Executing script : {script_name}")
 
 if argLen == 0:
     print('Missing command line argument')
     #sys.exit(1)
 else:
     #different ways of formatting a string
-    print('Checking even odd for input val= %s and argCount = %d' %(arguments[0], argLen))
+    print(f'Checking even odd for input val= {arguments[0]} and argCount = {argLen}')
     num = int(arguments[0])  #Default data type for sys.argv is str
     if num%2 == 0:
         	print('even')
