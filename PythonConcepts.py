@@ -287,3 +287,6 @@ if response.status_code == 200:
     responseBody = response.json()  # Converts response body to a Python dict
     print(responseBody) 
     print(responseBody[0]['email']) #print a specific field in the list of responses
+
+doubleVal = 1.234567
+print(f'Value trucnated to 2 decimal places - {doubleVal:.2f}')
