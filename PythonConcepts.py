@@ -18,9 +18,9 @@ else:
     print(f'Checking even odd for input val= {arguments[0]} and argCount = {argLen}')
     num = int(arguments[0])  #Default data type for sys.argv is str
     if num%2 == 0:
-        	print('even')
+        print('even')
     elif num%2 != 0:
-        	print('odd')
+        print('odd')
 
 print(type(range(0,10)))
 
