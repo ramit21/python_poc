@@ -272,3 +272,7 @@ Q. What is *args, and **kwargs?
 
 A. https://www.geeksforgeeks.org/args-kwargs-python/
 
+Q. Is the print statement or function in Python 3?
+
+A: In Python 2, print is the statement. Whereas in Python 3, print is the function.
+
