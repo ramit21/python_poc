@@ -276,3 +276,5 @@ Q. Is the print statement or function in Python 3?
 
 A: In Python 2, print is the statement. Whereas in Python 3, print is the function.
 
+## Practice questions
+https://github.com/ramit21/The-Grand-Complete-Data-Science-Materials-Dec-2025/tree/main/Python
