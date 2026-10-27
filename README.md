@@ -276,5 +276,62 @@ Q. Is the print statement or function in Python 3?
 
 A: In Python 2, print is the statement. Whereas in Python 3, print is the function.
 
+## Unit testing
+Here is a clean, side-by-side example comparing Python's built-in unittest library with the modern, popular pytest framework.
+
+Suppose we have a simple class we want to test:
+
+```
+# calculator.py
+class Calculator:
+
+  def add(self, a, b):
+    return a + b
+```
+
+1. The unittest Example (Built-in)
+```
+# test_calculator_unittest.py
+import unittest
+from calculator import Calculator
+
+
+class TestCalculator(unittest.TestCase):
+
+  def setUp(self):
+    # Runs before every test method
+    self.calc = Calculator()
+
+  def test_add(self):
+    result = self.calc.add(2, 3)
+    self.assertEqual(result, 5)
+
+
+if __name__ == "__main__":
+  unittest.main()
+```
+
+How to run: python test_calculator_unittest.py
+
+2. The pytest Example (Modern & Clean)
+```
+# test_calculator_pytest.py
+import pytest
+from calculator import Calculator
+
+
+@pytest.fixture
+def calc():
+  # Pytest's equivalent of setUp() using fixtures
+  return Calculator()
+
+
+def test_add(calc):
+  result = calc.add(2, 3)
+  assert result == 5
+```
+
+How to run: Just type pytest in your terminal. Pytest automatically discovers any file starting with test_ or ending with _test.py.
+
 ## Practice questions
 https://github.com/ramit21/The-Grand-Complete-Data-Science-Materials-Dec-2025/tree/main/Python
