@@ -10,7 +10,7 @@ class Person:
 
 class Employee: #by default inherits object class
     __id = None       #private variables with default values
-    __name = ""
+    __name = ""       #'name mangling': starting member or method name with two underscore, python renames internally, so yo cant access from outside
     __type = "Staff"
     __salary = 0
        
