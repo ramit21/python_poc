@@ -93,7 +93,7 @@ Q. A dict of list, how to return a default empty list if key not found?
 Ans. 
 ```
 my_dict = {"a": [1, 2], "b": [3, 4]}
-my_dict.get("a", [])
+my_dict.get("c", [])
 ```
 ———————————————————————————————  
 ## File handling:  
