@@ -17,6 +17,8 @@ cd into pytest folder and run the test cases by simply running
 ```
 
 python3 -m pytest 
+or
+python3 -m pytest --log-cli-level=INFO  #to show loggers as well
 or 
 python3 -m pytest test_<file> to run a specific test case.
 ```
