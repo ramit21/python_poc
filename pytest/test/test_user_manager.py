@@ -3,7 +3,11 @@ import pytest
 
 @pytest.fixture
 def user_manager(): #return a fresh user manager object for every test case
-    yield UserManager()
+    print("setting up data")
+    manager = UserManager()
+    yield manager
+    print("clearing up data")
+    manager.users.clear() #not exactly needed here, but showing how to cleanup like db connections etc here
 
 def test_add_user(user_manager):
     assert user_manager.add_user("Ramit", "ramit.sharma@organisation.com") == True
