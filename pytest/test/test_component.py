@@ -11,6 +11,7 @@ def test_divide():
     assert divide(6, 3) == 2, "6 divided by 3 is equal to 2"
 
 def test_weather(mocker):
+    """Mock HTTP calls"""
     #given
     mock_get = mocker.patch("component.requests.get") #See how we mock requests invocations inside component.py
     mock_get.return_value.status_code = 200
@@ -22,6 +23,7 @@ def test_weather(mocker):
     mock_get.assert_called_once_with("https://api.weather.com/v1/Dubai")
 
 def test_get_user_name(mocker):
+    """Mock client method calls"""
     #given
     mock_api_client = mocker.Mock(spec=APIClient)
     mock_api_client.get_user_data.return_value = {"id" : 1, "name" : "Alice"} #mock method response
