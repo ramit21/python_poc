@@ -303,7 +303,6 @@ class Calculator:
 import unittest
 from calculator import Calculator
 
-
 class TestCalculator(unittest.TestCase):
 
   def setUp(self):
@@ -313,7 +312,6 @@ class TestCalculator(unittest.TestCase):
   def test_add(self):
     result = self.calc.add(2, 3)
     self.assertEqual(result, 5)
-
 
 if __name__ == "__main__":
   unittest.main()
@@ -327,12 +325,10 @@ How to run: python test_calculator_unittest.py
 import pytest
 from calculator import Calculator
 
-
 @pytest.fixture
 def calc():
   # Pytest's equivalent of setUp() using fixtures
   return Calculator()
-
 
 def test_add(calc):
   result = calc.add(2, 3)
