@@ -341,5 +341,8 @@ def test_add(calc):
 
 How to run: Just type pytest in your terminal. Pytest automatically discovers any file starting with test_ or ending with _test.py. See the pytest folder for more examples of using pytest.
 
+## logging
+Using the logging module. See example in component.py inside pytest module.
+
 ## Practice questions
 https://github.com/ramit21/The-Grand-Complete-Data-Science-Materials-Dec-2025/tree/main/Python
