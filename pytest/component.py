@@ -1,4 +1,14 @@
 import requests
+import logging
+
+logger = logging.getLogger(__name__) # each module to get its own logger instead of using a common global logger
+
+# Configure logging format and minimum level
+logging.basicConfig(
+    level=logging.DEBUG,  # Capture DEBUG and above
+    format="%(asctime)s [%(levelname)s] %(name)s: %(message)s",
+    datefmt="%Y-%m-%d %H:%M:%S"
+)
 
 def add(a, b):
     return a+b
@@ -9,6 +19,7 @@ def divide(a, b):
     return a / b     
 
 def get_weather(city):
+    logger.info(f"Fetching weather for city {city}")
     response = requests.get(f"https://api.weather.com/v1/{city}")
     if response.status_code == 200:
         return response.json()
