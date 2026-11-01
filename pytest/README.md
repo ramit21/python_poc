@@ -1,11 +1,12 @@
 # Unit testing
 
-Run the test cases by simply running 
+cd into pytest folder and run the test cases by simply running 
 ```
-pytest
+python3 -m pytest 
 or 
-pytest test_<file> to run a specific test case.
+python3 -m pytest test_<file> to run a specific test case.
 ```
+don't cd into test folder, you can run pytest on main code root folder.
 
 
 ## Steps to install pytest

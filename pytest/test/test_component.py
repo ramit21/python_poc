@@ -1,4 +1,5 @@
-from component import add, divide
+#No need of ../component as pytest automatically adds project's root directory to Python's path when you run it
+from component import add, divide 
 import pytest
 
 def test_add():
