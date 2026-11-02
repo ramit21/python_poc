@@ -191,10 +191,6 @@ print(find_container_words(given_list))  # Output: ['bat', 'bath']
 
 ```
 
-
-
-
-
 ## NumPy pandas: 
 **NumPy**:    
 Useful when operating on large data sets. Saves code and memory compared to oprating on normal Lists. T
