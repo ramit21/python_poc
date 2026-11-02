@@ -120,6 +120,81 @@ Key Tools and Techniques:
 
 ———————————————————————————————  
 
+## Multiple return values from methods
+
+Methods in Python exactly one value, but it can be a tuple containing different data types.
+
+eg:
+```
+def describe():
+  return "cat", 3, [1,2], {"key::val}
+# now unpack
+name, count, nums, meta = describe()
+```
+
+Let's say you are calling a function/constructor that needs these 4 return values using describe method call as input, simply use *:
+```
+def client(name, count, nums, meta):
+   pass
+
+client(*describe())
+
+```
+
+A side note, a method with pass, basically returns None
+
+## String manipulations
+
+To check for None or empty string "":
+```
+if not word:
+   return False
+```
+
+```
+animal = "dog"
+print(f"Animal is {animal}") # Animal is dog
+print(f"Animal is {animal}!r") # Animal is 'dog'
+```
+
+A problem statement that uses string sorting, check if string a substring of another, and indexing:
+
+Q. Given a list of words, return container words, ie word that contain other wordsin list. A word is not a container of itself, and need not be repeated if more than 1 words fall inside it. Return alphabetically sorted.
+
+Ans:
+```
+def find_container_words(given_list):
+    # 1. Sort words by length so shorter words come first
+    words = sorted(given_list, key=len)
+    containers = set()
+    
+    # 2. Iterate through each word as a potential 'haystack'
+    for i in range(len(words)):
+        haystack = words[i]
+        
+        # 3. Check only words to the left (which are shorter or equal in length)
+        for j in range(i): # or do: for needle in words[:i]
+            needle = words[j]
+            
+            # Ensure it's not matching an identical word instance against itself
+            # and check if the needle is a substring of the haystack
+            if needle != haystack and needle in haystack:
+                containers.add(haystack)
+                break  # Optimization: Once a container is found, no need to test more needles
+                
+    # 4. Return as an alphabetically sorted list
+    return sorted(containers)
+
+# Test
+given_list = ["at", "bath", "bat", "one"]
+print(find_container_words(given_list))  # Output: ['bat', 'bath']         
+
+```
+
+
+
+
+
 ## NumPy pandas: 
 **NumPy**:    
 Useful when operating on large data sets. Saves code and memory compared to oprating on normal Lists. T
@@ -317,7 +392,12 @@ if __name__ == "__main__":
   unittest.main()
 ```
 
-How to run: python test_calculator_unittest.py
+How to run: 
+```
+python -m unittest -v -s test_calculator_unittest.py 
+#or -s the path to folder
+```
+
 
 2. The pytest Example (Modern & Clean)
 ```
@@ -335,7 +415,12 @@ def test_add(calc):
   assert result == 5
 ```
 
-How to run: Just type pytest in your terminal. Pytest automatically discovers any file starting with test_ or ending with _test.py. See the pytest folder for more examples of using pytest.
+How to run: 
+```
+pytest -v <test.py or the folder>
+```
+
+See the pytest folder for more examples of using pytest.
 
 ## logging
 Using the logging module. See example in component.py inside pytest module.
