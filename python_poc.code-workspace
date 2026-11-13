@@ -1,0 +1,16 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+		{
+			"path": "../langraph-rag-demo"
+		},
+		{
+			"path": "../gen-ai"
+		},
+		{
+			"path": "../aws-assessment"
+		}
+	]
+}

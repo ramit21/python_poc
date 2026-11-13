@@ -95,6 +95,9 @@ Ans.
 my_dict = {"a": [1, 2], "b": [3, 4]}
 my_dict.get("c", [])
 ```
+
+Q. Print multiple level nested dict.
+Ans. json.dumps(my_dict, intend=2)
 ———————————————————————————————  
 ## File handling:  
 
